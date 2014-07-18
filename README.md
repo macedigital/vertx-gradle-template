@@ -4,9 +4,9 @@ Template project for creating a Vert.x module with a Gradle build.
 
 Clone this and adapt it to easily develop Vert.x modules using Gradle as your build tool.
 
-By default this module contains a HelloWorld example application implemented in all stable language implementations currently supported by vert.x.
+By default this module contains a com.mycompany.myproject.HelloWorldVerticle example application implemented in all stable language implementations currently supported by vert.x.
 
-This template provides a [http://www.gradle.org/docs/current/release-notes#upgraded-to-groovy-2.3.2](gradle v2.0) wrapper.
+This template provides a [gradle 2.0](http://www.gradle.org/docs/current/release-notes.html) wrapper.
 
 ## Getting started 
 
@@ -30,8 +30,10 @@ For further details go to http://vertx.io/gradle_dev.html.
 
 You can configure many things in `gradle.properties`:
 
-* Change `modowner`, `modname` and `version` to your liking as described in the [http://vertx.io/mods_manual.html](modules manual).
-* `pullInDeps` determines whether all module dependencies should be packaged into the module as [http://vertx.io/mods_manual.html#nested-mods](nested module).
+* Change `modowner`, `modname` and `version` to your liking as described in the [modules manual](http://vertx.io/mods_manual.html).
+* `pullInDeps` determines whether all module dependencies should be packaged into the module as [nested module](http://vertx.io/mods_manual.html#nested-mods) (default: true).
+* `produceJar` Set to true if you want the build to output a jar as well as a module zip file (default: true).
+* `createFatJar` Set to true if you want to build a fat executable jar containing everything needed to run the module (default: false).
 
 ## Setup your IDE
 
@@ -50,5 +52,3 @@ Or
 Once the IDE files have been created you can open the project in your IDE.
 
 See the [build script](build.gradle) for the list of useful tasks
-
-
