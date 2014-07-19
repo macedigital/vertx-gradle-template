@@ -64,7 +64,7 @@ dependencies {
   provided "io.vertx:lang-clojure:$clojureLangModVersion@jar"
 
   // If you're creating Jython compiled verticles you may need the following dependencies
-  provided "org.python:jython:$jythonVersion"
+  provided "org.python:jython-standalone:$jythonVersion"
   provided "io.vertx:lang-jython:$jythonLangModVersion@jar"
 
   // If you're creating Jruby compiled verticles you may need the following dependencies
