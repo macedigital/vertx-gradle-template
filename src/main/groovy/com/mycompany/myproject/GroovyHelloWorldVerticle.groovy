@@ -1,7 +1,8 @@
+package com.mycompany.myproject
 
 import org.vertx.groovy.platform.Verticle
 
-class GroovyVerticle extends Verticle {
+class GroovyHelloWorldVerticle  extends Verticle {
 
     def start() {
         vertx.createHttpServer().requestHandler { req ->

@@ -1,29 +1,37 @@
 {
 
   // Java verticle
-  "main":"com.mycompany.myproject.PingVerticle",
+  "main":"com.mycompany.myproject.JavaHelloWorldVerticle",
 
   // In this example we also provide various other versions of the main verticle, you can uncomment this and
   // play around:
 
-  // Java *source* verticle
-  //"main":"JavaSourcePingVerticle.java",
-
   // Compiled Groovy verticle - note that they must be prefixed with 'groovy:' to distinguish them from compiled Java verticles
-  //"main":"groovy:com.mycompany.myproject.GroovyPingVerticle",
+  //"main":"groovy:com.mycompany.myproject.GroovyHelloWorldVerticle",
+
+  // Compiled Scala verticle - note that they must be prefixed with 'scala:' to distinguish them from compiled Java verticles
+  //"main": "scala:com.mycompany.myproject.ScalaHelloWorldVerticle",
+
+  // Java *source* verticle
+  //"main":"JavaVerticle.java",
 
   // Groovy *script* verticle
   //"main": "GroovyVerticle.groovy",
 
+  // Scala *source* verticle
+  //"main": "ScalaVerticle.scala",
+
   // Ruby verticle
-  //"main":"ping_verticle.rb",
+  //"main":"hello_world.rb",
 
   // JavaScript verticle
-  //"main": "ping_verticle.js",
+  //"main": "hello_world.js",
 
   // Python verticle
-  //"main": "ping_verticle.py",
+  //"main": "hello_world.py",
 
+  // Clojure verticle
+  //"main": "hello_world.clj",
 
   // If your module is going to be registered in the Vert.x module registry you will also need the following
   // mandatory fields
@@ -36,6 +44,9 @@
   "keywords": ["gerbils", "cars", "cheese", "chocolate", "underpants", "herring"],
   "homepage": "url to your project page",
 
-  "auto-redeploy": true
+  // "preserve-cwd": true, // whether module root folder is cwd, default: false
+  // "worker": true, // Wether module is a worker, which may do blocking i/o, default: false
+  // "includes": "", // add other modules classpaths
+  "auto-redeploy": true // auto-detects changes in modules, which is useful for development, default: false
 
 }
