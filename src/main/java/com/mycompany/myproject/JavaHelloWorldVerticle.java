@@ -6,6 +6,7 @@ import org.vertx.java.platform.Verticle;
 
 public class JavaHelloWorldVerticle extends Verticle {
 
+    @Override
     public void start() {
         vertx.createHttpServer().requestHandler(new Handler<HttpServerRequest>() {
             public void handle(HttpServerRequest req) {
