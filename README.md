@@ -52,3 +52,8 @@ Or
 Once the IDE files have been created you can open the project in your IDE.
 
 See the [build script](build.gradle) for the list of useful tasks
+
+## FAQ
+
+* gradle command `runMod` fails to find classpath: 
+    * try invoking the script `env -u VERTX_MODS ./gradlew runMod` can help if developing a single module 
