@@ -3,10 +3,110 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Hello World Example</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Hello there!</h1>
-    <p>You are running the <code>HelloWorldVerticle</code> boilerplate example.</p>
-    <p>This is just a simple demonstration. For more details go to <a href="http://vertx.io/docs.html" target="_blank">Vert.x documentation</a>.</p>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hello there!</h1>
+            <p>You are running the <code>HelloWorldVerticle</code> boilerplate example.</p>
+            <p>This is just a simple demonstration. For more details go to <a href="http://vertx.io/docs.html" target="_blank">Vert.x documentation</a>.</p>
+        </div>
+
+        <div class="row">
+            <article class="col-md-12">
+
+                <h1 id="vert.x-gradle-template">Vert.x Gradle Template</h1>
+                <p>Starter Template project for creating a Vert.x module with a Gradle build.</p>
+                <p>Clone this and adapt it to easily develop Vert.x modules using Gradle as your build tool.</p>
+                <p>By default this module contains a com.mycompany.myproject.HelloWorldVerticle example application
+                    implemented in all stable language implementations currently supported by vert.x.</p>
+                <p>This template provides a <a href="http://www.gradle.org/docs/current/release-notes.html">gradle
+                    2.2</a> wrapper.</p>
+
+                <h2 id="getting-started">Getting started</h2>
+                <p>Clone this repo, replace <code>origin</code> with your preferred one and run <code>gradlew</code> to
+                    test whether everything is working.</p>
+<pre class="sh"><code>git clone git@github.com:macedigital/vertx-gradle-template.git &lt;name of your project&gt;
+
+    cd &lt;name of your project&gt;
+
+    git remote rm origin
+
+    git remote add origin &lt;path to your repo&gt;
+
+    ./gradlew test </code></pre>
+                <p>For further details go to http://vertx.io/gradle_dev.html.</p>
+
+                <h2 id="configure-the-project">Configure the project</h2>
+
+                <p>You can configure many things in <code>gradle.properties</code>:</p>
+                <ul>
+                    <li>Change <code>modowner</code>, <code>modname</code> and <code>version</code> to your liking as
+                        described in the <a href="http://vertx.io/mods_manual.html">modules manual</a>.
+                    </li>
+                    <li><code>pullInDeps</code> determines whether all module dependencies should be packaged into the
+                        module as <a href="http://vertx.io/mods_manual.html#nested-mods">nested module</a> (default:
+                        true).
+                    </li>
+                    <li><code>produceJar</code> Set to true if you want the build to output a jar as well as a module
+                        zip file (default: true).
+                    </li>
+                    <li><code>createFatJar</code> Set to true if you want to build a fat executable jar containing
+                        everything needed to run the module (default: false).
+                    </li>
+                </ul>
+                <p>Remove or add dependencies in <code>build.gradle</code>:</p>
+                <ul>
+                    <li>Depending on your chosen programming language(s) you can safely remove lang-mods you neither
+                        want nor need in <code>dependencies</code>.
+                    </li>
+                    <li>If you plan on publishing your mod to Maven, you will want to edit <code>configurePom</code>.
+                    </li>
+                </ul>
+                <p>You can provide default <a href="http://vertx.io/mods_manual.html#module-configuration">module
+                    configuration</a> if any in <code>conf.json</code>.</p>
+
+                <h2 id="setup-your-ide">Setup your IDE</h2>
+
+                <p>You can use the <code>idea</code> and <code>eclipse</code> Gradle plugins to create the project files
+                    for your IDE.</p>
+                <pre class="sh"><code>./gradlew idea</code></pre>
+                <p>Or</p>
+                <pre class="sh"><code>./gradlew eclipse</code></pre>
+                <p>Once the IDE files have been created you can open the project in your IDE.</p>
+
+                <p>See the <code>build script</code> for the list of useful tasks</p>
+
+                <h2 id="faq">FAQ</h2>
+                <ul>
+                    <li>gradle command <code>runMod</code> fails to find classpath:
+                        <ul>
+                            <li>invoking the script <code>env -u VERTX_MODS ./gradlew runMod</code> can help if
+                                developing a single module
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Running / compiling JRuby verticle fails with <code>org.vertx.java.core.VertxException:
+                        org.jruby.embed.EvalFailedException: (Errno::ENOENT) &lt;some/directory&gt;</code>
+                        <ul>
+                            <li>manually create
+                                <some
+                                /directory> and try again
+                            </li>
+                        </ul>
+                    </li>
+                    <li>JRuby fails with <code>LoadError: no such file to load -- rubygems</code>
+                        <ul>
+                            <li>try setting <code>RUBYOPT</code> environment variable, e.g. <code>export
+                                RUBYOPT=rubygems &amp;&amp; ./gradlew runMod</code> <a
+                                    href="http://stackoverflow.com/questions/9848830/should-jruby-complete-jar-come-with-rubygems">1</a>.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </div>
 </body>
 </html>
