@@ -100,7 +100,13 @@
                         <ul>
                             <li>try setting <code>RUBYOPT</code> environment variable, e.g. <code>export
                                 RUBYOPT=rubygems &amp;&amp; ./gradlew runMod</code> <a
-                                    href="http://stackoverflow.com/questions/9848830/should-jruby-complete-jar-come-with-rubygems">1</a>.
+                                    href="http://stackoverflow.com/questions/9848830/should-jruby-complete-jar-come-with-rubygems">[1]</a>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Task 'runMod' fails with java.lang.ClassNotFoundException:
+                        <ul>
+                            <li>Besides the obvious, also check if you have the <code>VERTX_MODS</code> environment variable set. If so, unset it by running gradle wrapper like so instead <code>env -u VERTX_MODS ./gradlew runMod</code>.
                             </li>
                         </ul>
                     </li>

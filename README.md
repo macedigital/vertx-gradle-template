@@ -71,5 +71,7 @@ See the [build script](build.gradle) for the list of useful tasks
 * JRuby fails with `LoadError: no such file to load -- rubygems`
     * try setting `RUBYOPT` environment variable, e.g. `export RUBYOPT=rubygems && ./gradlew runMod` [1].
 
+* Task 'runMod' fails with java.lang.ClassNotFoundException:
+    * Besides the obvious, also check if you have the `VERTX_MODS` environment variable set. If so, unset it by running gradle wrapper like so instead `env -u VERTX_MODS ./gradlew runMod`.
 
 [1]: http://stackoverflow.com/questions/9848830/should-jruby-complete-jar-come-with-rubygems
